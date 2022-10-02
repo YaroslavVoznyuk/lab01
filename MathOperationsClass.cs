@@ -9,39 +9,62 @@ namespace Calculator
 {
     public class MathOperationsClass
     {
-
-        public double Sum(double a, double b)
+        #region Construtor
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="a">переменная a типа double</param>
+        /// <param name="b">переменная b типа double</param>
+        /// <param name="A">переменная a типа int</param>
+        /// <param name="B">переменная b типа int</param>
+        public MathOperationsClass(double a, double b, int A, int B)
         {
-            return a + b;
+            this.Da = a;
+            this.Db = b;
+            this.A = A;
+            this.B = B;
         }
 
-        public double Minus(double a, double b)
+        #endregion
+
+        #region Properties
+        public double Da { get; set; }
+        public double Db { get; set; }
+        public int A { get; set; }
+        public int B { get; set; }
+
+        #endregion
+
+        public double Sum(double Da, double Db)
         {
-            return a - b;
+            return Da + Db;
         }
 
-        public double Log(double a)
+        public double Minus(double Da, double Db)
         {
-            return Math.Log(a);
+            return Da - Db;
         }
 
-        public int Fac(int a)
+        public double Log10(double Da)
         {
-            for (int i = 1; i <= a; i++)
-            {
-                a *= i;
-            }
-            return a;
+            return Math.Log10(Da);
         }
 
-        public int Degree(int a, int b)
+        public int Fac(int A)
         {
-            return (int)Math.Pow(a, b);
+            if (A == 1) return 1;
+
+            return A * Fac(A - 1);
         }
 
-        public int Sqrt(int a)
+        public int Degree(int A, int B)
         {
-            return (int)Math.Sqrt(a);
+            return (int)Math.Pow(A, B);
+        }
+
+        public int Sqrt(int A)
+        {
+            return (int)Math.Sqrt(A);
         }
 
     }
