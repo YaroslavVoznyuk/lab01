@@ -26,7 +26,6 @@ namespace Calculator
             Console.WriteLine($"fac(A)={math.Fac(A)}"); 
             Console.WriteLine($"A^B={math.Degree(A, B)}");
             Console.WriteLine($"sqrt(A)={math.Sqrt(A)}");
-
         }
     }
 }
